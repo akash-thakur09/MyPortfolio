@@ -13,7 +13,7 @@ const reviews: Review[] = [
     name: "Sarah Mitchell",
     role: "CEO, TechTrend",
     quote:
-      "John’s expertise in React and Node.js transformed our app’s performance. His attention to detail is unmatched!",
+      "Akash's expertise in React and Node.js transformed our app’s performance. His attention to detail is unmatched!",
     avatar: "src/img/female1.jpg",
     rating: 5,
   },
@@ -21,7 +21,7 @@ const reviews: Review[] = [
     name: "Michael Chen",
     role: "Product Manager, InnovateCo",
     quote:
-      "Working with John was a breeze. He delivered clean, efficient code ahead of schedule.",
+      "Working with Akash was a breeze. He delivered clean, efficient code ahead of schedule.",
     avatar: "src/img/male1.jpg",
     rating: 4,
   },
@@ -29,7 +29,7 @@ const reviews: Review[] = [
     name: "Emily Davis",
     role: "Founder, StartUpX",
     quote:
-      "John’s creative solutions and dedication made our project a success. Highly recommend!",
+      "Akash's creative solutions and dedication made our project a success. Highly recommend!",
     avatar: "src/img/female2.jpg",
     rating: 5,
   },
@@ -37,7 +37,7 @@ const reviews: Review[] = [
     name: "David Johnson",
     role: "CTO, WebCore Solutions",
     quote:
-      "John brought fresh ideas and robust architecture to our development team. He’s a true professional.",
+      "Akash brought fresh ideas and robust architecture to our development team. He’s a true professional.",
     avatar: "src/img/male2.jpg",
     rating: 5,
   },
@@ -53,7 +53,7 @@ const reviews: Review[] = [
     name: "Vivian Gomez",
     role: "Marketing Director, BrandReach",
     quote:
-      "From code quality to communication, John delivers top-tier results every time.",
+      "From code quality to communication, Akash delivers top-tier results every time.",
     avatar: "src/img/female4.jpg",
     rating: 5,
   },

@@ -59,7 +59,7 @@ export default function Contact() {
                 {/* Contact Content */}
                 <div className="relative bg-gray-950 p-8 rounded-lg border border-gray-800 shadow-lg animate-fadeInUp">
                     {/* background pattern box */}
-                    <div className="absolute -bottom-20 -right-20 size-56 bg-gray-800/20 border-2 border-gray-700 rounded-lg overflow-hidden">
+                    <div className="absolute -bottom-20 -right-20 size-56 overflow-hidden">
                         <div className="absolute inset-0 bg-hero opacity-[.03]"></div>
                     </div>
 
@@ -156,10 +156,10 @@ export default function Contact() {
                                     <li className="flex items-center gap-3">
                                         <i className="fas fa-envelope text-green-400"></i>
                                         <a
-                                            href="mailto:john@devworkspace.com"
+                                            href="mailto:akash@devworkspace.com"
                                             className="hover:text-green-400 transition-colors"
                                         >
-                                            john@devworkspace.com
+                                            akash@devworkspace.com
                                         </a>
                                     </li>
                                     <li className="flex items-center gap-3">
@@ -218,20 +218,35 @@ export default function Contact() {
 
                     {/* Coffee cup decoration */}
                     <div className="absolute bottom-10 right-10 w-12 h-16">
+                        {/* Handle */}
                         <div className="absolute -right-4 top-6 h-8 w-8 border-4 border-gray-700 rounded-r-full"></div>
+
+                        {/* Cup base */}
                         <div className="absolute bottom-0 w-full h-10 bg-gray-700 rounded-b-lg"></div>
-                        <div className="absolute bottom-8 w-full h-8 bg-gray-600 rounded-lg">
+
+                        {/* Coffee liquid */}
+                        <div className="absolute bottom-8 w-full h-8 bg-gray-600 rounded-lg overflow-hidden">
                             <div className="absolute inset-1 rounded-lg bg-gradient-to-b from-amber-700 to-amber-900"></div>
                         </div>
-                        <div className="absolute w-6 h-1 bg-white/20 left-3 top-3"></div>
-                        {/* Steam */}
-                        <div className="absolute w-1.5 h-4 bg-white bg-opacity-30 left-4 -top-2 animate-pulse"></div>
-                        <div className="absolute w-1.5 h-4 bg-white bg-opacity-30 left-6 -top-4 animate-pulse"></div>
-                        <div className="absolute w-1.5 h-4 bg-white bg-opacity-30 left-8 -top-3 animate-pulse"></div>
+
+                        {/* Reflection */}
+                        <div className="absolute w-6 h-1 bg-white/20 left-3 top-3 rounded"></div>
+
+                        {/* Steam lines */}
+                        <div className="absolute -top-5 left-2 flex gap-0.5">
+                            <div className="steam-line1 animate-steam1"></div>
+                            <div className="steam-line2 animate-steam2 delay-500"></div>
+                            <div className="steam-line3 animate-steam3 delay-1000"></div>
+                            <div className="steam-line3 animate-steam4 delay-1000"></div>
+                        </div>
+
+                        {/* Label */}
                         <div className="absolute left-2 bottom-3 text-[8px] tracking-widest">
                             COFFEE
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </section>
