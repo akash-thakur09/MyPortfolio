@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
             <h3 className="flex items-center gap-3">
               <FaCode className="text-green-400 text-3xl" />
               <span className="text-2xl font-bold text-white font-code">
-                John Peterson
+                Akash Thakur
               </span>
             </h3>
             <p className="text-gray-300 leading-relaxed pe-6 lg:pe-16">
@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-300 text-sm">
-            © {new Date().getFullYear()} John Peterson. Crafted with{" "}
+            © {new Date().getFullYear()} Akash Thakur. Crafted with{" "}
             <FaHeart className="inline text-green-400" /> and{" "}
             <FaCoffee className="inline text-green-400" />.
           </p>

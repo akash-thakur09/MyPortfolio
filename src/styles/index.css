@@ -1,8 +1,5 @@
 @import "tailwindcss";
 @import '@fortawesome/fontawesome-free/css/all.min.css';
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
 
 /* Vanilla overrides to match template corners, shadows etc */
 :root {
@@ -88,4 +85,74 @@ body {
 .animate-marquee {
   display: flex;
   animation: marquee 25s linear infinite;
+}
+@keyframes steam {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.6;
+    filter: blur(0px);
+  }
+  50% {
+    opacity: 0.4;
+    filter: blur(2px);
+  }
+  100% {
+    transform: translateY(-50px) scaleX(0.9);
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+
+/* Steam shapes */
+.steam-line1 {
+  width: 6px;
+  height: 20px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 9999px;
+  filter: blur(1px);
+}
+
+.steam-line2 {
+  width: 6px;
+  height: 10px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 9999px;
+  filter: blur(1px);
+}
+
+.steam-line3 {
+  width: 6px;
+  height: 15px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 9999px;
+  filter: blur(1px);
+}
+.steam-line4 {
+  width: 6px;
+  height: 12px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 9999px;
+  filter: blur(1px);
+}
+
+/* Animations with delays (staggered) */
+/* .animate-steam1 {
+  animation: steam 3s ease-in-out infinite;
+  animation-delay: 0s;
+} */
+
+.animate-steam1 {
+  animation: steam 3s cubic-bezier(0.37, 0, 0.63, 1) infinite; /* sine wave feel */
+}
+.animate-steam2 {
+  animation: steam 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+.animate-steam3 {
+  animation: steam 3s ease-in-out infinite;
+  animation-delay: 2s;
+}
+.animate-steam4 {
+  animation: steam 3s ease-in-out infinite;
+  animation-delay: 1s;
 }

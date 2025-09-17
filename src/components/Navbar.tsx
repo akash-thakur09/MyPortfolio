@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
         <a href="/" className="flex items-center gap-3">
           <FaCode className="text-green-400 text-2xl animate-pulse" />
           <span className="text-xl font-bold text-white font-mono">
-            John Peterson
+            Akash Thakur
           </span>
         </a>
 

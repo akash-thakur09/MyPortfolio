@@ -10,8 +10,6 @@ interface ProgressBars {
 }
 
 const About = () => {
-  // Tooltip state
-  const [tooltipText, setTooltipText] = useState('');
 
   // Progress bar state
   const [progress, setProgress] = useState<ProgressBars>({
@@ -81,7 +79,7 @@ const About = () => {
 
           {/* Name & Role */}
           <div className="text-center mt-6 mb-4">
-            <h3 className="text-2xl font-bold text-white mb-1">John Peterson</h3>
+            <h3 className="text-2xl font-bold text-white mb-1"> Akash Thakur</h3>
             <p className="text-green-400 text-lg">Full-Stack Developer & Open Source Enthusiast</p>
           </div>
 
