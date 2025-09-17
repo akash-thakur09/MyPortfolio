@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* Vanilla overrides to match template corners, shadows etc */
+:root {
+  --sidebar-bg: #2fb07f; /* green used in template */
+  --content-bg: #f7faf9; /* very light gray */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-white text-gray-800 antialiased;
+  background-color: var(--content-bg);
+}
+
+/* Sidebar rounded corners on large screens */
+.app-container {
+  @apply min-h-screen flex;
+}
+
+/* Main content panel styling */
+.main-panel {
+  @apply flex-1 p-8;
+}
+
+/* small card */
+.card {
+  @apply bg-white rounded-lg shadow-md p-6;
+}
+
+/* make sidebar stay full height */
+.sidebar {
+  background: var(--sidebar-bg);
+  color: white;
+}
+
+/* profile image circle */
+.profile-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.16);
+}
+
+/* nav link hover */
+.sidebar a:hover {
+  opacity: 0.95;
+}
+
+/* large right photo in hero */
+.hero-photo {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* responsive adjustments */
+@media (max-width: 1024px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    border-radius: 0;
+  }
+  .app-container {
+    flex-direction: column;
+  }
+  .hero-photo { width: 160px; height: 160px; }
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 25s linear infinite;
+}
