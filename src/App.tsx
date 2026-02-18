@@ -18,7 +18,6 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="w-full min-h-screen bg-gray-950 text-white">
-      {/* Navbar stays sticky */}
       <Navbar />
 
       {/* Sections */}
@@ -26,7 +25,7 @@ function App() {
         {/* HomePage (full screen) */}
         <section
           id="home"
-          className="min-h-screen w-full flex items-center justify-center bg-gray-950"
+          className="flex items-center justify-center bg-gray-950"
         >
           <HomePage />
         </section>
@@ -36,24 +35,28 @@ function App() {
           <TechStack />
         </section>
 
-        
+        {/* About (normal section) */}
         <section id="about" className="w-full bg-gray-900">
           <About />
         </section>
-         <section
-          id="portfolio"
+
+        {/* Portfolio (normal section) */}
+        <section
+          id="cta"
           className="min-h-screen w-full flex items-center justify-center bg-black"
         >
           <CTA />
         </section>
 
+        {/* Projects section */}
         <section
-          id="resume"
+          id="projects"
           className="min-h-screen w-full flex items-center justify-center bg-gray-900"
         >
           <Project />
         </section>
 
+        {/* Blog Section */}
         <section
           id="blog"
           className="min-h-screen w-full flex items-center justify-center bg-gray-950"
@@ -62,12 +65,12 @@ function App() {
         </section>
 
 
-        <section
+        {/* <section
           id="services"
           className="min-h-screen w-full flex items-center justify-center bg-gray-950"
         >
           <Review />
-        </section>
+        </section> */}
 
         <section
           id="contact"
@@ -75,7 +78,7 @@ function App() {
         >
           <Contact />
         </section>
-        <Footer />  
+        <Footer />
       </main>
     </div>
   );

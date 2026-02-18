@@ -51,7 +51,7 @@ const Blog: React.FC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold font-code inline-block relative text-white mb-1">
-            My <span className="text-green-400">Blog</span>
+            My <span className="text-green-400">Blogs</span> & <span className="text-green-400">Posts</span>
             <div className="absolute -bottom-2 left-0 w-full h-1 bg-green-500 opacity-70"></div>
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
