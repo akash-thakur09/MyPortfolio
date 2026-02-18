@@ -1,6 +1,11 @@
 import { useState } from "react";
 
 export default function Contact() {
+    const LinkedIn = "https://www.linkedin.com/in/thakur-aakash/";
+    const Twitter = "https://twitter.com/imaakash0218";
+    const Devto = "https://dev.to/imaakash0218";
+    const GitHub = "https://github.com/akash-thakur09";
+
     const [form, setForm] = useState({ name: "", email: "", message: "" });
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,17 +34,37 @@ export default function Contact() {
         }
 
         setIsSubmitting(true);
+
         try {
-            // simulate API call
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-            setSuccess(true);
-            setForm({ name: "", email: "", message: "" });
-        } catch {
+            // ✅ Google Apps Script URL (YOURS)
+            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxPmOCyfED61t-nBvn3evoNWt81tDAd2KxZ3FPa-9YGjdzOhd6M3c6eKlqXthA4zyDZ/exec";
+
+            // ✅ Create FormData to bypass CORS
+            const formData = new FormData();
+            formData.append("name", form.name);
+            formData.append("email", form.email);
+            formData.append("message", form.message);
+
+            // ✅ Send directly to Google Sheets (frontend-only)
+            const response = await fetch(SCRIPT_URL, {
+                method: "POST",
+                body: formData, // 👈 no headers needed
+            });
+
+            if (response.ok) {
+                setSuccess(true);
+                setForm({ name: "", email: "", message: "" });
+            } else {
+                throw new Error("Network response was not ok");
+            }
+        } catch (err) {
+            console.error(err);
             setError("Something went wrong. Please try again.");
         } finally {
             setIsSubmitting(false);
         }
     };
+
 
     return (
         <section id="contact" className="py-16 bg-gray-900/50 relative">
@@ -77,9 +102,7 @@ export default function Contact() {
                                     <input
                                         type="text"
                                         value={form.name}
-                                        onChange={(e) =>
-                                            setForm({ ...form, name: e.target.value })
-                                        }
+                                        onChange={(e) => setForm({ ...form, name: e.target.value })}
                                         className="w-full py-3 px-4 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 focus:outline-none focus:border-green-400 transition-colors"
                                         placeholder="Your Name"
                                     />
@@ -120,9 +143,7 @@ export default function Contact() {
                                         placeholder="Your Message"
                                     />
                                     {errors.message && (
-                                        <p className="text-red-400 text-sm mt-1">
-                                            {errors.message}
-                                        </p>
+                                        <p className="text-red-400 text-sm mt-1">{errors.message}</p>
                                     )}
                                 </div>
 
@@ -156,24 +177,24 @@ export default function Contact() {
                                     <li className="flex items-center gap-3">
                                         <i className="fas fa-envelope text-green-400"></i>
                                         <a
-                                            href="mailto:akash@devworkspace.com"
+                                            href="mailto:imakash0218@gmail.com"
                                             className="hover:text-green-400 transition-colors"
                                         >
-                                            akash@devworkspace.com
+                                            imakash0218@gmail.com
                                         </a>
                                     </li>
                                     <li className="flex items-center gap-3">
                                         <i className="fas fa-phone-alt text-green-400"></i>
                                         <a
-                                            href="tel:+1234567890"
+                                            href="tel:+919301983476"
                                             className="hover:text-green-400 transition-colors"
                                         >
-                                            +1 (234) 567-890
+                                            +91 93019 83476
                                         </a>
                                     </li>
                                     <li className="flex items-center gap-3">
                                         <i className="fas fa-map-marker-alt text-green-400"></i>
-                                        <span>San Francisco, CA</span>
+                                        <span>Indore, India (M.P.)</span>
                                     </li>
                                 </ul>
                             </div>
@@ -184,28 +205,28 @@ export default function Contact() {
                                 </h3>
                                 <div className="flex gap-4">
                                     <a
-                                        href="https://github.com/"
+                                        href={GitHub}
                                         target="_blank"
                                         className="text-gray-300 hover:text-green-400 text-2xl transition-transform transform hover:scale-110"
                                     >
                                         <i className="fab fa-github"></i>
                                     </a>
                                     <a
-                                        href="https://linkedin.com/in/"
+                                        href={LinkedIn}
                                         target="_blank"
                                         className="text-gray-300 hover:text-green-400 text-2xl transition-transform transform hover:scale-110"
                                     >
                                         <i className="fab fa-linkedin"></i>
                                     </a>
                                     <a
-                                        href="https://twitter.com/"
+                                        href={Twitter}
                                         target="_blank"
                                         className="text-gray-300 hover:text-green-400 text-2xl transition-transform transform hover:scale-110"
                                     >
                                         <i className="fab fa-twitter"></i>
                                     </a>
                                     <a
-                                        href="https://dev.to/"
+                                        href={Devto}
                                         target="_blank"
                                         className="text-gray-300 hover:text-green-400 text-2xl transition-transform transform hover:scale-110"
                                     >
@@ -218,35 +239,22 @@ export default function Contact() {
 
                     {/* Coffee cup decoration */}
                     <div className="absolute bottom-10 right-10 w-12 h-16">
-                        {/* Handle */}
                         <div className="absolute -right-4 top-6 h-8 w-8 border-4 border-gray-700 rounded-r-full"></div>
-
-                        {/* Cup base */}
                         <div className="absolute bottom-0 w-full h-10 bg-gray-700 rounded-b-lg"></div>
-
-                        {/* Coffee liquid */}
                         <div className="absolute bottom-8 w-full h-8 bg-gray-600 rounded-lg overflow-hidden">
                             <div className="absolute inset-1 rounded-lg bg-gradient-to-b from-amber-700 to-amber-900"></div>
                         </div>
-
-                        {/* Reflection */}
                         <div className="absolute w-6 h-1 bg-white/20 left-3 top-3 rounded"></div>
-
-                        {/* Steam lines */}
                         <div className="absolute -top-5 left-2 flex gap-0.5">
                             <div className="steam-line1 animate-steam1"></div>
                             <div className="steam-line2 animate-steam2 delay-500"></div>
                             <div className="steam-line3 animate-steam3 delay-1000"></div>
-                            <div className="steam-line3 animate-steam4 delay-1000"></div>
+                            <div className="steam-line3 animate-steam4 delay-1500"></div>
                         </div>
-
-                        {/* Label */}
                         <div className="absolute left-2 bottom-3 text-[8px] tracking-widest">
                             COFFEE
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </section>
