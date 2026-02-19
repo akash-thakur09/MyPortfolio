@@ -1,6 +1,9 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { FaCalendarAlt, FaArrowRight, FaBookOpen } from "react-icons/fa";
 import img1 from "../assets/img.webp"
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { fadeInUpVariants, staggerContainerVariants } from "../utils/animations";
 
 interface BlogPost {
   title: string;
@@ -42,14 +45,29 @@ const posts: BlogPost[] = [
 ];
 
 const Blog: React.FC = () => {
+  const { ref, controls } = useScrollAnimation();
+  
   return (
-    <section id="blog" className="py-20 bg-dark border-y border-gray-800 relative">
+    <motion.section 
+      id="blog" 
+      className="py-20 bg-dark border-y border-gray-800 relative"
+      ref={ref}
+      initial="initial"
+      animate={controls}
+      variants={{
+        initial: { opacity: 0 },
+        animate: { opacity: 1, transition: { duration: 0.6, staggerChildren: 0.1 } }
+      }}
+    >
       {/* Pattern background */}
       <div className="absolute inset-0 bg-square opacity-[.05]"></div>
 
       <div className="max-w-6xl mx-auto lg:px-12 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          variants={fadeInUpVariants}
+        >
           <h2 className="text-3xl lg:text-4xl font-bold font-code inline-block relative text-white mb-1">
             My <span className="text-green-400">Blogs</span> & <span className="text-green-400">Posts</span>
             <div className="absolute -bottom-2 left-0 w-full h-1 bg-green-500 opacity-70"></div>
@@ -57,14 +75,18 @@ const Blog: React.FC = () => {
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
             Dive into my thoughts on coding, tech trends, and developer life. Explore my latest posts below.
           </p>
-        </div>
+        </motion.div>
 
         {/* Blog Cards */}
-        <div className="flex flex-col gap-12">
+        <motion.div 
+          className="flex flex-col gap-12"
+          variants={staggerContainerVariants}
+        >
           {posts.map((post, index) => (
-            <article
+            <motion.article
               key={index}
               className="bg-gray-950 rounded-lg border border-gray-800 shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 flex flex-col md:flex-row"
+              variants={fadeInUpVariants}
             >
               {/* Image */}
               <div className="md:w-1/3">
@@ -112,21 +134,24 @@ const Blog: React.FC = () => {
                   </a>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
 
           {/* View All Button */}
-          <div className="text-center">
+          <motion.div 
+            className="text-center"
+            variants={fadeInUpVariants}
+          >
             <a
               href="/blogs"
               className="py-3 px-6 bg-green-500 text-gray-900 font-bold rounded-lg hover:bg-green-600 transition-colors inline-flex items-center gap-2"
             >
               <FaBookOpen /> View All Posts
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

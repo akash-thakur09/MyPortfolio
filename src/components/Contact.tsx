@@ -1,6 +1,13 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { fadeInUpVariants } from "../utils/animations";
+import { useToast } from "../contexts/ToastContext";
+import { validateContactForm } from "../utils/validation";
 
 export default function Contact() {
+    const { ref, controls } = useScrollAnimation();
+    const { showToast } = useToast();
     const LinkedIn = "https://www.linkedin.com/in/thakur-aakash/";
     const Twitter = "https://twitter.com/imaakash0218";
     const Devto = "https://dev.to/imaakash0218";
@@ -9,27 +16,16 @@ export default function Contact() {
     const [form, setForm] = useState({ name: "", email: "", message: "" });
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [success, setSuccess] = useState(false);
-    const [error, setError] = useState("");
-
-    const validate = () => {
-        const newErrors: { [key: string]: string } = {};
-        if (!form.name.trim()) newErrors.name = "Name is required.";
-        if (!form.email.trim()) newErrors.email = "Email is required.";
-        else if (!/\S+@\S+\.\S+/.test(form.email)) newErrors.email = "Invalid email.";
-        if (!form.message.trim()) newErrors.message = "Message is required.";
-        return newErrors;
-    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setErrors({});
-        setSuccess(false);
-        setError("");
 
-        const validationErrors = validate();
-        if (Object.keys(validationErrors).length > 0) {
-            setErrors(validationErrors);
+        // Use validation utility
+        const validation = validateContactForm(form);
+        if (!validation.isValid) {
+            setErrors(validation.errors);
+            showToast('Please fix the errors in the form', 'error');
             return;
         }
 
@@ -52,14 +48,14 @@ export default function Contact() {
             });
 
             if (response.ok) {
-                setSuccess(true);
+                showToast('Message sent successfully! I\'ll get back to you soon.', 'success');
                 setForm({ name: "", email: "", message: "" });
             } else {
                 throw new Error("Network response was not ok");
             }
         } catch (err) {
             console.error(err);
-            setError("Something went wrong. Please try again.");
+            showToast('Something went wrong. Please try again.', 'error');
         } finally {
             setIsSubmitting(false);
         }
@@ -67,10 +63,23 @@ export default function Contact() {
 
 
     return (
-        <section id="contact" className="py-16 bg-gray-900/50 relative">
+        <motion.section 
+            id="contact" 
+            className="py-16 bg-gray-900/50 relative"
+            ref={ref}
+            initial="initial"
+            animate={controls}
+            variants={{
+                initial: { opacity: 0 },
+                animate: { opacity: 1, transition: { duration: 0.6, staggerChildren: 0.1 } }
+            }}
+        >
             <div className="max-w-6xl mx-auto lg:px-12 relative z-10">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <motion.div 
+                    className="text-center mb-16"
+                    variants={fadeInUpVariants}
+                >
                     <h2 className="text-3xl lg:text-4xl font-bold font-code inline-block relative text-white mb-1">
                         Get in <span className="text-green-400">Touch</span>
                         <div className="absolute -bottom-2 left-0 w-full h-1 bg-green-500 opacity-70"></div>
@@ -79,10 +88,13 @@ export default function Contact() {
                         Have a project in mind or just want to chat about code? Drop me a
                         message, and let’s make things happen!
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Contact Content */}
-                <div className="relative bg-gray-950 p-8 rounded-lg border border-gray-800 shadow-lg animate-fadeInUp">
+                <motion.div 
+                    className="relative bg-gray-950 p-8 rounded-lg border border-gray-800 shadow-lg animate-fadeInUp"
+                    variants={fadeInUpVariants}
+                >
                     {/* background pattern box */}
                     <div className="absolute -bottom-20 -right-20 size-56 overflow-hidden">
                         <div className="absolute inset-0 bg-hero opacity-[.03]"></div>
@@ -155,15 +167,6 @@ export default function Contact() {
                                     <i className="fas fa-paper-plane"></i>
                                     {isSubmitting ? "Sending..." : "Send Message"}
                                 </button>
-
-                                {success && (
-                                    <p className="text-green-400 text-center mt-4">
-                                        Message sent successfully!
-                                    </p>
-                                )}
-                                {error && (
-                                    <p className="text-red-400 text-center mt-4">{error}</p>
-                                )}
                             </form>
                         </div>
 
@@ -255,8 +258,8 @@ export default function Contact() {
                             COFFEE
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 }

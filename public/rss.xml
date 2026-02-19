@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolio Blog</title>
+    <link>https://yourportfolio.com/blog</link>
+    <description>Articles about web development, programming, and technology</description>
+    <language>en-us</language>
+    <atom:link href="https://yourportfolio.com/rss.xml" rel="self" type="application/rss+xml" />
+    
+    <!-- Blog posts will be dynamically generated here -->
+    <!-- This is a placeholder RSS feed. In production, this should be generated from actual blog posts -->
+  </channel>
+</rss>
