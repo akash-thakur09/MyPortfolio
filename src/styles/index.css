@@ -11,15 +11,6 @@
   --color-muted: #6b7280;
 }
 
-:root.light {
-  --color-bg: #ffffff;
-  --color-fg: #0a0a0a;
-  --color-primary: #059669;
-  --color-secondary: #f3f4f6;
-  --color-accent: #10b981;
-  --color-muted: #9ca3af;
-}
-
 html, body, #root {
   height: 100%;
 }
