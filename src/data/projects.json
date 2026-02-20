@@ -1,0 +1,88 @@
+{
+  "projects": [
+    {
+      "id": "ecommerce-platform",
+      "slug": "ecommerce-platform",
+      "title": "E-Commerce Platform",
+      "shortDescription": "Full-stack e-commerce solution with React, Node.js, and PostgreSQL",
+      "fullDescription": "A comprehensive e-commerce platform featuring real-time inventory management, secure payment processing with Stripe, advanced product filtering, and a responsive admin dashboard. Built with modern technologies and best practices for scalability and performance.",
+      "thumbnail": "/images/projects/ecommerce-thumb.jpg",
+      "images": [
+        "/images/projects/ecommerce-1.jpg",
+        "/images/projects/ecommerce-2.jpg",
+        "/images/projects/ecommerce-3.jpg"
+      ],
+      "techStack": ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Stripe", "Redis", "Docker"],
+      "challenges": [
+        "Implementing real-time inventory management across multiple warehouses",
+        "Handling payment processing securely with PCI compliance",
+        "Optimizing database queries for large product catalogs",
+        "Managing complex state for shopping cart and checkout flow"
+      ],
+      "solutions": [
+        "Used WebSocket for real-time inventory updates and notifications",
+        "Integrated Stripe with proper security measures and webhook handling",
+        "Implemented database indexing and query optimization with Redis caching",
+        "Utilized Redux Toolkit for predictable state management"
+      ],
+      "liveUrl": "https://demo-ecommerce.example.com",
+      "githubUrl": "https://github.com/username/ecommerce-platform",
+      "featured": true
+    },
+    {
+      "id": "task-management-app",
+      "slug": "task-management-app",
+      "title": "Task Management Application",
+      "shortDescription": "Collaborative task management tool with real-time updates",
+      "fullDescription": "A modern task management application that enables teams to collaborate effectively. Features include drag-and-drop task boards, real-time collaboration, file attachments, comments, and advanced filtering. Built with React, Firebase, and Material-UI.",
+      "thumbnail": "/images/projects/taskapp-thumb.jpg",
+      "images": [
+        "/images/projects/taskapp-1.jpg",
+        "/images/projects/taskapp-2.jpg"
+      ],
+      "techStack": ["React", "TypeScript", "Firebase", "Material-UI", "Framer Motion"],
+      "challenges": [
+        "Implementing smooth drag-and-drop functionality",
+        "Handling real-time collaboration with multiple users",
+        "Managing complex permission systems",
+        "Optimizing performance with large task lists"
+      ],
+      "solutions": [
+        "Used react-beautiful-dnd for intuitive drag-and-drop",
+        "Leveraged Firebase Realtime Database for instant updates",
+        "Implemented role-based access control with Firebase Auth",
+        "Applied virtualization for rendering large lists efficiently"
+      ],
+      "liveUrl": "https://taskapp.example.com",
+      "githubUrl": "https://github.com/username/task-management",
+      "featured": true
+    },
+    {
+      "id": "weather-dashboard",
+      "slug": "weather-dashboard",
+      "title": "Weather Dashboard",
+      "shortDescription": "Real-time weather tracking with interactive maps and forecasts",
+      "fullDescription": "An interactive weather dashboard that provides real-time weather data, 7-day forecasts, and interactive maps. Features location-based weather, severe weather alerts, and historical data visualization. Built with React and integrated with multiple weather APIs.",
+      "thumbnail": "/images/projects/weather-thumb.jpg",
+      "images": [
+        "/images/projects/weather-1.jpg"
+      ],
+      "techStack": ["React", "TypeScript", "OpenWeather API", "Mapbox", "Chart.js", "TailwindCSS"],
+      "challenges": [
+        "Integrating multiple weather data sources",
+        "Displaying complex weather data in an intuitive way",
+        "Handling geolocation and map interactions",
+        "Managing API rate limits"
+      ],
+      "solutions": [
+        "Created a unified data layer to normalize different API responses",
+        "Designed custom visualizations with Chart.js",
+        "Implemented efficient caching and debouncing for API calls",
+        "Used Mapbox GL for smooth map interactions"
+      ],
+      "liveUrl": "https://weather-dashboard.example.com",
+      "githubUrl": "https://github.com/username/weather-dashboard",
+      "featured": false
+    }
+  ]
+}

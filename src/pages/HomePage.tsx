@@ -23,10 +23,11 @@ const HomePage: React.FC = () => {
 
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 py-4">
             <a
-              href="#projects"
+              href="/Akash_Thakur_Resume.pdf"
+              download="Akash_Thakur_Resume.pdf"
               className="py-2.5 sm:py-3 px-4 sm:px-6 bg-green-500 hover:bg-green-600 text-gray-900 font-bold rounded-lg transition-all flex items-center gap-2 text-sm sm:text-base"
             >
-              <MdCloudDownload className="text-xl" /> My Resume
+              <MdCloudDownload className="text-xl" /> Download Resume
             </a>
             <a
               href="#contact"

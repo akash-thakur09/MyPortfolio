@@ -1,10 +1,23 @@
 @import "tailwindcss";
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 
-/* Vanilla overrides to match template corners, shadows etc */
+/* Theme Variables */
 :root {
-  --sidebar-bg: #2fb07f; /* green used in template */
-  --content-bg: #f7faf9; /* very light gray */
+  --color-bg: #0a0a0a;
+  --color-fg: #ffffff;
+  --color-primary: #10b981;
+  --color-secondary: #1f2937;
+  --color-accent: #22c55e;
+  --color-muted: #6b7280;
+}
+
+:root.light {
+  --color-bg: #ffffff;
+  --color-fg: #0a0a0a;
+  --color-primary: #059669;
+  --color-secondary: #f3f4f6;
+  --color-accent: #10b981;
+  --color-muted: #9ca3af;
 }
 
 html, body, #root {
@@ -12,8 +25,10 @@ html, body, #root {
 }
 
 body {
-  @apply bg-white text-gray-800 antialiased;
-  background-color: var(--content-bg);
+  @apply antialiased;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Sidebar rounded corners on large screens */
@@ -155,4 +170,58 @@ body {
 .animate-steam4 {
   animation: steam 3s ease-in-out infinite;
   animation-delay: 1s;
+}
+
+/* Accessibility - Focus Indicators */
+*:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Enhanced focus for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+/* Skip to main content link */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-to-main:focus {
+  top: 0;
+}
+
+/* Ensure sufficient color contrast */
+.text-muted {
+  color: var(--color-muted);
+}
+
+/* Keyboard navigation helper */
+.keyboard-user *:focus {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
 }
