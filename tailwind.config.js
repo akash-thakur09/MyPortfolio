@@ -1,6 +1,7 @@
 // tailwind.config.js
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: 'class',
   theme: {
     extend: {
       keyframes: {
@@ -11,6 +12,14 @@ module.exports = {
       },
       animation: {
         marquee: "marquee 25s linear infinite",
+      },
+      colors: {
+        'theme-bg': 'var(--color-bg)',
+        'theme-fg': 'var(--color-fg)',
+        'theme-primary': 'var(--color-primary)',
+        'theme-secondary': 'var(--color-secondary)',
+        'theme-accent': 'var(--color-accent)',
+        'theme-muted': 'var(--color-muted)',
       },
     },
   },

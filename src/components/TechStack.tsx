@@ -1,7 +1,9 @@
-import React from "react";
 import { FaJs, FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaSass, FaGitAlt, FaDocker, FaAws, FaBootstrap, FaVuejs, FaAngular, FaDatabase, FaLeaf, FaNpm } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 function TechStack() {
+  const { ref, controls } = useScrollAnimation();
   const stack = [
     { icon: <FaJs className="text-yellow-400 text-2xl" />, name: "JavaScript" },
     { icon: <FaReact className="text-blue-400 text-2xl" />, name: "React" },
@@ -25,7 +27,16 @@ function TechStack() {
   const repeatedStack = [...stack, ...stack];
 
   return (
-    <section className="relative h-16 bg-gray-800/50 backdrop-blur-sm overflow-hidden flex items-center">
+    <motion.section 
+      ref={ref}
+      initial="initial"
+      animate={controls}
+      variants={{
+        initial: { opacity: 0, y: 20 },
+        animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+      }}
+      className="relative h-16 bg-gray-800/50 backdrop-blur-sm overflow-hidden flex items-center"
+    >
       <div className="flex gap-8 animate-marquee whitespace-nowrap">
         {repeatedStack.map((tech, i) => (
           <div key={i} className="flex items-center gap-2 text-gray-300">
@@ -34,7 +45,7 @@ function TechStack() {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 

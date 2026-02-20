@@ -1,0 +1,40 @@
+{
+  "testimonials": [
+    {
+      "id": "1",
+      "name": "Sarah Johnson",
+      "role": "Product Manager",
+      "company": "Tech Solutions Inc.",
+      "avatar": "https://i.pravatar.cc/150?img=1",
+      "content": "Akash is an exceptional developer who consistently delivers high-quality work. His attention to detail and problem-solving skills are outstanding.",
+      "rating": 5
+    },
+    {
+      "id": "2",
+      "name": "Michael Chen",
+      "role": "CTO",
+      "company": "Digital Innovations Ltd.",
+      "avatar": "https://i.pravatar.cc/150?img=2",
+      "content": "Working with Akash was a pleasure. He brought innovative solutions to complex problems and always met deadlines. Highly recommended!",
+      "rating": 5
+    },
+    {
+      "id": "3",
+      "name": "Emily Rodriguez",
+      "role": "Lead Designer",
+      "company": "StartupXYZ",
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "content": "Akash's ability to translate designs into pixel-perfect implementations is impressive. He's a true professional and a great team player.",
+      "rating": 5
+    },
+    {
+      "id": "4",
+      "name": "David Kim",
+      "role": "Engineering Manager",
+      "company": "CloudTech Corp",
+      "avatar": "https://i.pravatar.cc/150?img=4",
+      "content": "One of the best developers I've worked with. Akash's code is clean, well-documented, and maintainable. He's also great at mentoring junior developers.",
+      "rating": 5
+    }
+  ]
+}

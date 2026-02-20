@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCode, FaGithub, FaLinkedin, FaTwitter, FaDev, FaLink, FaUser, FaCog, FaDollarSign, FaBook, FaEnvelope, FaPaperPlane, FaHeart, FaCoffee } from "react-icons/fa";
+import { FaCode, FaGithub, FaLinkedin, FaTwitter, FaDev, FaLink, FaUser, FaCog, FaDollarSign, FaBook, FaEnvelope, FaHeart, FaCoffee } from "react-icons/fa";
 
 const Footer: React.FC = () => {
 const LinkedIn = "https://www.linkedin.com/in/thakur-aakash/";

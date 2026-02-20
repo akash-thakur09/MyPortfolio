@@ -1,0 +1,114 @@
+{
+  "skills": [
+    {
+      "name": "JavaScript",
+      "category": "Frontend",
+      "level": "expert"
+    },
+    {
+      "name": "TypeScript",
+      "category": "Frontend",
+      "level": "expert"
+    },
+    {
+      "name": "React",
+      "category": "Frontend",
+      "level": "expert"
+    },
+    {
+      "name": "Next.js",
+      "category": "Frontend",
+      "level": "advanced"
+    },
+    {
+      "name": "Vue.js",
+      "category": "Frontend",
+      "level": "intermediate"
+    },
+    {
+      "name": "TailwindCSS",
+      "category": "Frontend",
+      "level": "expert"
+    },
+    {
+      "name": "HTML5",
+      "category": "Frontend",
+      "level": "expert"
+    },
+    {
+      "name": "CSS3",
+      "category": "Frontend",
+      "level": "expert"
+    },
+    {
+      "name": "Node.js",
+      "category": "Backend",
+      "level": "advanced"
+    },
+    {
+      "name": "Express.js",
+      "category": "Backend",
+      "level": "advanced"
+    },
+    {
+      "name": "Python",
+      "category": "Backend",
+      "level": "advanced"
+    },
+    {
+      "name": "PostgreSQL",
+      "category": "Backend",
+      "level": "intermediate"
+    },
+    {
+      "name": "MongoDB",
+      "category": "Backend",
+      "level": "advanced"
+    },
+    {
+      "name": "REST APIs",
+      "category": "Backend",
+      "level": "expert"
+    },
+    {
+      "name": "GraphQL",
+      "category": "Backend",
+      "level": "intermediate"
+    },
+    {
+      "name": "Git",
+      "category": "Tools & DevOps",
+      "level": "expert"
+    },
+    {
+      "name": "Docker",
+      "category": "Tools & DevOps",
+      "level": "intermediate"
+    },
+    {
+      "name": "AWS",
+      "category": "Tools & DevOps",
+      "level": "intermediate"
+    },
+    {
+      "name": "CI/CD",
+      "category": "Tools & DevOps",
+      "level": "advanced"
+    },
+    {
+      "name": "Jest",
+      "category": "Tools & DevOps",
+      "level": "advanced"
+    },
+    {
+      "name": "Webpack",
+      "category": "Tools & DevOps",
+      "level": "intermediate"
+    },
+    {
+      "name": "Vite",
+      "category": "Tools & DevOps",
+      "level": "advanced"
+    }
+  ]
+}
