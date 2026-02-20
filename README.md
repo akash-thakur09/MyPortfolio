@@ -8,7 +8,7 @@ A production-ready, feature-rich portfolio website built with React, TypeScript,
 
 ### 🎨 Core Features
 - **Responsive Design** - Mobile-first approach with seamless experience across all devices
-- **Dark/Light Theme** - Smooth theme switching with localStorage persistence
+- **Modern Dark Theme** - Beautiful dark theme optimized for readability
 - **Progressive Web App (PWA)** - Installable app with offline support
 - **Blog Engine** - Markdown-based blog with syntax highlighting and reading time
 - **Project Showcase** - Filterable project gallery with detailed project pages
@@ -233,23 +233,18 @@ Your blog content here...
 
 ### 3. Theme Colors
 
-Edit `src/styles/index.css` to customize theme colors:
+The portfolio uses a dark theme by default. You can customize the colors by editing `src/styles/index.css`:
 
 ```css
 :root {
-  --color-bg: #ffffff;
-  --color-fg: #0a0a0a;
-  --color-primary: #059669;
-  --color-accent: #10b981;
-}
-
-:root.dark {
   --color-bg: #0a0a0a;
   --color-fg: #ffffff;
   --color-primary: #10b981;
   --color-accent: #22c55e;
 }
 ```
+
+> **Note**: Light theme support is planned for a future release.
 
 ### 4. GitHub Activity
 
